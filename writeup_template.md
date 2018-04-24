@@ -39,9 +39,9 @@ So here is the result in the car image:
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 The steps to create a threshold binary image were the following:
-    * Convert RGB to HLS
-    * Apply OpenCV cv2.Sobel()
-    * Threshold gradients s=(120,255), sx=(60,255)
+* Convert RGB to HLS
+* Apply OpenCV cv2.Sobel()
+* Threshold gradients s=(120,255), sx=(60,255)
 
 ![title](./images_results/threshold.png)
 
@@ -56,20 +56,22 @@ Here is the result image:
 #### 4,5,6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 To find the lines on the warped image i used the following procedure:
-    * Apply histogram to find line peaks.
-    * Find non zero pixels around histogram peaks.
-    * Apply second order polynomial to each line.
+* Apply histogram to find line peaks.
+* Find non zero pixels around histogram peaks.
+* Apply second order polynomial to each line.
     
 To calculate the curvature, i did it using the following procedure:
+```
     ploty = np.linspace(0, undistort.shape[0]-1, undistort.shape[0])
     y_eval = np.max(ploty)
     left_curverad = ((1 + (2*left_fit[0]*y_eval + left_fit[1])**2)**1.5) / np.absolute(2*left_fit[0])
     right_curverad = ((1 + (2*right_fit[0]*y_eval + right_fit[1])**2)**1.5) / np.absolute(2*right_fit[0])
+```
     
 And finally, to plot the result on the road i did the following procedure:
-    * Apply OpenCVs cv2.fillPoly() function to draw the lines.
-    * Warp back to original space image with OpenCVs cv2.warpPerspective.
-    * Combine the result with original image using OpenCVs cv2.addWeighted.
+* Apply OpenCVs cv2.fillPoly() function to draw the lines.
+* Warp back to original space image with OpenCVs cv2.warpPerspective.
+* Combine the result with original image using OpenCVs cv2.addWeighted.
     
 Here is the result image:
 
