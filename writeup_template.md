@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 
 To calibrate and undistort the image, i used the OpenCV's cv2.calibrateCamera() and cv2.undistort() functions, and by specifying object and image points i managed to fix the calibration and distortion on the image.
 
-![alt text][image1]
+![title](./images_results/undistorted.jpg)
 
 To find the chessboard corners, i used the cv2.findChessboardCorners() function, provided by OpenCV. First we convert the image to gray, then we apply the find chessboard corners function and then we draw and display the corners in the chessboard.
 
