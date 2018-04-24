@@ -89,4 +89,4 @@ Here's a [link to my video result](./test_3.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The pipeline did fairly well in ideal conditions. Although when it entered the regions with high contrast, the line kinda "broke" and after it left that region it returned back to normal. A possible solution to fix this issue could to apply better smoothing in these areas or we could improve the color and gradient thresholds to achieve better detection results.
